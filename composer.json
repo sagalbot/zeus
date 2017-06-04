@@ -1,0 +1,25 @@
+{
+    "name": "sagalbot/zeus",
+    "description": "Automated End-To-End Testing for WordPress",
+    "require-dev": {
+        "phpunit/phpunit": "~5.0"
+    },
+    "authors": [
+        {
+            "name": "Jeff",
+            "email": "jeff.sagal@briteweb.com"
+        }
+    ],
+    "require": {
+        "illuminate/container": "^5.4",
+        "wp-cli/wp-cli": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zeus\\": "src/"
+        },
+        "files": [
+            "helpers/functions.php"
+        ]
+    }
+}
