@@ -4,7 +4,7 @@
 namespace Zeus\Contracts;
 
 
-interface GenerateSiteMap
+interface Factory
 {
     public function generate();
 }

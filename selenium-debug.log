@@ -1,0 +1,24 @@
+21:19:20.872 INFO - Selenium build info: version: '3.3.0', revision: 'b526bd5'
+21:19:20.872 INFO - Launching a standalone Selenium Server
+2017-06-04 21:19:20.890:INFO::main: Logging initialized @242ms to org.seleniumhq.jetty9.util.log.StdErrLog
+21:19:20.943 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+ registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
+21:19:20.944 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+ registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
+21:19:20.944 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+21:19:20.944 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+Unable to create new instances on this machine.
+21:19:20.944 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+21:19:20.944 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+2017-06-04 21:19:20.988:INFO:osjs.Server:main: jetty-9.2.20.v20161216
+2017-06-04 21:19:21.024:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@685cb137{/,null,AVAILABLE}
+2017-06-04 21:19:21.054:INFO:osjs.AbstractConnector:main: Started ServerConnector@5bcab519{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2017-06-04 21:19:21.054:INFO:osjs.Server:main: Started @406ms
+21:19:21.054 INFO - Selenium Server is up and running
+21:19:21.279 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
+21:19:21.301 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Hello world!, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
+21:19:21.313 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Hello world!, browserName=chrome, javascriptEnabled=true, platform=ANY}]
+Starting ChromeDriver 2.29.461585 (0be2cd95f834e9ee7c46bcc7cf405b483f5ae83b) on port 21996
+Only local connections are allowed.
+21:19:22.778 INFO - Detected dialect: OSS
+21:19:22.801 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Hello world!, browserName=chrome, javascriptEnabled=true, platform=ANY}]]

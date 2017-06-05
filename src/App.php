@@ -2,11 +2,11 @@
 
 namespace Zeus;
 
+use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use Zeus\Commands\ZeusCommands;
-use Zeus\SiteMaps\JsonSiteMap;
 use WP_CLI;
 
 /**
@@ -47,6 +47,10 @@ class App
 
         $this->container()->bind(Filesystem::class, function () {
             return new Filesystem(new Local(plugin_dir_path(__DIR__)));
+        });
+
+        $this->container()->singleton('config', function () {
+            return new Repository((new Config())->all());
         });
     }
 

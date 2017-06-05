@@ -1,11 +1,11 @@
 <?php
 
-namespace Zeus\SiteMaps;
+namespace Zeus\Factories;
 
 use League\Flysystem\Filesystem;
-use Zeus\Contracts\GenerateSiteMap;
+use Zeus\Contracts\Factory;
 
-class JsonSiteMap implements GenerateSiteMap
+class JsonSiteMap implements Factory
 {
 
     /**
@@ -57,7 +57,7 @@ class JsonSiteMap implements GenerateSiteMap
      */
     public function save(array $result)
     {
-        $this->filesystem->put('compiled/map.json', json_encode($result, JSON_PRETTY_PRINT));
+        $this->filesystem->put(config('paths.map'), json_encode($result, JSON_PRETTY_PRINT));
     }
 
     /**
