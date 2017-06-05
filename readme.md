@@ -1,6 +1,6 @@
 # Zeus
 
-> Automated end-to-end testing for WordPress, guaranteed to make you feel like a greek god.
+> Automated end-to-end testing for WordPress. Zeus generates a JSON file based the GUID's of your WordPress site, and runs basic health checks against each URL.
  
 ### Install
  
