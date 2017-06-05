@@ -2,6 +2,7 @@
 
 namespace Zeus\SiteMaps;
 
+use League\Flysystem\Filesystem;
 use Zeus\Contracts\GenerateSiteMap;
 
 class JsonSiteMap implements GenerateSiteMap
@@ -11,12 +12,19 @@ class JsonSiteMap implements GenerateSiteMap
      * @var \wpdb
      */
     private $db;
+    /**
+     * @var Filesystem
+     */
+    private $filesystem;
 
     /**
      * JsonSiteMap constructor.
+     * @param Filesystem $filesystem
      */
-    public function __construct()
+    public function __construct(Filesystem $filesystem)
     {
+        $this->filesystem = $filesystem;
+
         $this->bootstrap();
     }
 
@@ -38,7 +46,18 @@ class JsonSiteMap implements GenerateSiteMap
     {
         $result = $this->db->get_results($this->posts());
 
-        return json_encode($result);
+        $this->save($result);
+
+        return $result;
+    }
+
+    /**
+     * @param array $result
+     * @return void
+     */
+    public function save(array $result)
+    {
+        $this->filesystem->put('compiled/map.json', json_encode($result, JSON_PRETTY_PRINT));
     }
 
     /**

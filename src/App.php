@@ -3,21 +3,23 @@
 namespace Zeus;
 
 use Illuminate\Container\Container;
-use WP_CLI;
-use Zeus\Commands\GenerateCommand;
-use Zeus\Commands\TestCommand;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
 use Zeus\Commands\ZeusCommands;
 use Zeus\SiteMaps\JsonSiteMap;
-use Zeus\Traits\Singleton;
+use WP_CLI;
 
 /**
  * Class App
- * @package TipTheDriver
+ * @package Zeus
  */
 class App
 {
 
-    use Singleton;
+    /**
+     * @var array
+     */
+    private static $instances = array();
 
     /**
      * @var Container
@@ -26,7 +28,6 @@ class App
 
     /**
      * App constructor.
-     * Bootstrap if WooCommerce is active.
      */
     public function __construct()
     {
@@ -37,16 +38,15 @@ class App
         }
     }
 
-
     /**
-     * Bootstrap singletons.
+     * Register IoC Bindings.
      */
     private function bootstrap()
     {
         $this->container = new Container();
 
-        $this->container()->singleton(JsonSiteMap::class, function () {
-            return new JsonSiteMap();
+        $this->container()->bind(Filesystem::class, function () {
+            return new Filesystem(new Local(plugin_dir_path(__DIR__)));
         });
     }
 
@@ -67,10 +67,25 @@ class App
     }
 
     /**
-     * Run the install process.
      * Called on plugin activation.
      */
     static function install()
     {
+    }
+
+    /**
+     * Provides access to a single instance of App.
+     *
+     * @return $this
+     */
+    public static function instance()
+    {
+        $module = get_called_class();
+
+        if (!isset(self::$instances[$module])) {
+            self::$instances[$module] = new $module();
+        }
+
+        return self::$instances[$module];
     }
 }

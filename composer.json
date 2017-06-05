@@ -12,7 +12,8 @@
     ],
     "require": {
         "illuminate/container": "^5.4",
-        "wp-cli/wp-cli": "^1.2"
+        "wp-cli/wp-cli": "^1.2",
+        "league/flysystem": "^1.0"
     },
     "autoload": {
         "psr-4": {
