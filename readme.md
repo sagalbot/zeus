@@ -6,7 +6,7 @@
  
 1. `cd wp-content/plugins`
 2. `git clone https://github.com/sagalbot/zeus.git`
-3. `cd zeus && composer install` 
+3. `cd zeus && composer install && yarn install` 
 4. Activate Zeus plugin from `wp-admin`
 
 ### Commands

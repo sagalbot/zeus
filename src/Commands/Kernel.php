@@ -2,7 +2,7 @@
 
 namespace Zeus\Commands;
 
-class ZeusCommands
+class Kernel
 {
     /**
      * Run e2e Test Suite.

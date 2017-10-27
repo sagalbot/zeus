@@ -6,7 +6,7 @@ use Illuminate\Config\Repository;
 use Illuminate\Container\Container;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
-use Zeus\Commands\ZeusCommands;
+use Zeus\Commands\Kernel;
 use WP_CLI;
 
 /**
@@ -59,7 +59,7 @@ class App
      */
     private function registerCommands()
     {
-        WP_CLI::add_command('zeus', ZeusCommands::class);
+        WP_CLI::add_command('zeus', Kernel::class);
     }
 
     /**

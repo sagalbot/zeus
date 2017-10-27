@@ -12,10 +12,10 @@
     ],
     "require": {
         "illuminate/container": "^5.4",
-        "wp-cli/wp-cli": "^1.2",
-        "league/flysystem": "^1.0",
         "illuminate/config": "^5.4",
-        "vlucas/phpdotenv": "^2.4"
+        "league/flysystem": "^1.0",
+        "vlucas/phpdotenv": "^2.4",
+        "wp-cli/wp-cli": "^1.2"
     },
     "autoload": {
         "psr-4": {
